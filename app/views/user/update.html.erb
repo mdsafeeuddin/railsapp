@@ -1,0 +1,39 @@
+<style>
+th, td {
+  padding: 10px;
+}
+th {
+  text-align: right;
+}
+</style>
+
+<h1>Update Article:</h1>
+
+<%= form_tag(nil, method: "post") do %>
+
+<table>
+  <tbody>
+    <tr>
+      <th><%= label_tag(:fullname, "Fullname:") %></th>
+      <td><%= text_field_tag(:fullname, @user.fullname, :required => true) %></td>
+    </tr>
+    <tr>
+      <th><%= label_tag(:username, "Username:") %></th>
+      <td><%= text_field_tag(:username, @user.username, :required => true) %></td>
+    </tr>
+    <tr>
+      <th><%= label_tag(:password, "Password:") %></th>
+      <td><%= text_field_tag(:password, @user.password, :required => true) %></td>
+    </tr>
+    <tr>
+      <th><%= label_tag(:status, "Status:") %></th>
+      <td><%= check_box(:status, @user.status) %></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><%= submit_tag("Update") %></td>
+    </tr>
+  </tbody>
+</table>
+
+<% end %>

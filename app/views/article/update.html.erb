@@ -1,0 +1,39 @@
+<style>
+th, td {
+  padding: 10px;
+}
+th {
+  text-align: right;
+}
+</style>
+
+<h1>Update Article:</h1>
+
+<%= form_tag(nil, method: "post") do %>
+
+<table>
+  <tbody>
+    <tr>
+      <th><%= label_tag(:title, "Title:") %></th>
+      <td><%= text_field_tag(:title, @article.title, :required => true) %></td>
+    </tr>
+    <tr>
+      <th><%= label_tag(:author, "Author:") %></th>
+      <td><%= text_field_tag(:author, @article.author, :required => true) %></td>
+    </tr>
+    <tr>
+      <th><%= label_tag(:author, "Article Body:") %></th>
+      <td><%= text_field_tag(:body, @article.body, :required => true) %></td>
+    </tr>
+    <tr>
+      <th><%= label_tag(:author, "Homepage:") %></th>
+      <td><%= text_field_tag(:url, @article.url, placeholder: "www.example.com") %></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><%= submit_tag("Update") %></td>
+    </tr>
+  </tbody>
+</table>
+
+<% end %>
